@@ -1,0 +1,13 @@
+{
+  "name": "google-maps-polymer",
+  "version": "0.0.1",
+  "homepage": "https://github.com/beeva-hodeilopez/beeva-data-visualization-hackathon",
+  "authors": [
+    "beeva-hodeilopez <hodei.lopez@beeva.com>"
+  ],
+  "description": "example of google-maps webcomponent with polymer",
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
