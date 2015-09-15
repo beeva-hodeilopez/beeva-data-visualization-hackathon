@@ -1,15 +1,82 @@
 <html>
     <head>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <style>
-            body{background-color:#81d4fa;}
-            #header{text-align:center;}
-            #chart{margin:0 auto;}
+            html {
+                background: url(assets/background.jpg) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            body{
+                background-color:transparent;
+            }
+            rect{
+                fill-opacity: 0.7
+            }
+            .template{
+                padding: 100px 15px;
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            .navbar-inverse {
+                background-color: rgba(204, 204, 204, 0.77);
+                border-color: transparent;
+            }
+            .logo{
+                width:150px;
+            }
+            .footer {
+                position: relative;
+                height: 150px;
+                clear:both;
+                padding-top:20px;
+            }
+            #chart{
+                margin:0 auto;
+            }
         </style>
     </head>
     <body>
-        <div id="header"><h1>Ejemplo Google Charts</h1></div>
-        <div id="chart" style="width: 800px; height: 500px;"></div>
+    <!--NAV BAR-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <a href="#"><img class="logo" src="assets/logo.png" alt="BEEVA"/></a>
+                </div>
+                <div class="col-lg-8" style="text-align: center;">
+                    <h2 style="margin: 8px;">Vanilla JS Google Charts example</h2>
+                </div>
+                <div class="col-lg-2">
+                    <a style="color: black;" href="../index.html">
+                        <img style="width: 46px;float: left;" src="assets/home.png"/>
+                        <h4 style="margin-top: 17px;margin-left: 55px;">Inicio</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--PAGE CONTENT-->
+    <div class="template">
+        <div style="text-align:center;">
+            <div id="chart" style="width: 800px; height: 400px;"></div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="container">
+            <div style="float:right;">
+                <img src="assets/google.png" style="width:80px;" alt="GOOGLE CHARTS"/>
+            </div>
+        </div>
+    </footer>
+
+
     </body>
 
     <script>
@@ -36,11 +103,13 @@
             ]);
 
             var options = {
-                backgroundColor: '#81d4fa'
+                backgroundColor: {
+                    'fill':'rgba(204, 204, 204, 0.77)'
+                }
             };
 
             var container = document.getElementById('chart');
-              var chart = new google.visualization.GeoChart(container);
+            var chart = new google.visualization.GeoChart(container);
 
             chart.draw(data, options);
         }

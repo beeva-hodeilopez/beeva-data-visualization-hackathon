@@ -98,12 +98,11 @@ class BarGraph {
 @View({
   directives: [ BarGraph ],
   template: `
-  <h1 class="title" style="text-align: center;">Ejemplo D3 Angular 2</h1>
   <div style="text-align: center;">
   <bar-graph
     bind-data="graphData"
     width="1000"
-    height="500"
+    height="400"
   >
   <svg></svg>
   </bar-graph>
@@ -114,7 +113,6 @@ class BarGraph {
 class App {
   graphData: Array<number>;
   constructor() {
-
       this.graphData = [{"letter":"A" , "frequency": ".08167"},
                         {"letter":"B" , "frequency": ".01492"},
                         {"letter":"C" , "frequency": ".02782"},
