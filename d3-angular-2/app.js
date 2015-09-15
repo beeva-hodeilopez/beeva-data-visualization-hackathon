@@ -114,7 +114,7 @@ var App = (function () {
         }),
         angular2_1.View({
             directives: [BarGraph],
-            template: "\n  <h1 class=\"title\" style=\"text-align: center;\">Ejemplo D3 Angular 2</h1>\n  <div style=\"text-align: center;\">\n  <bar-graph\n    bind-data=\"graphData\"\n    width=\"1000\"\n    height=\"500\"\n  >\n  <svg></svg>\n  </bar-graph>\n  </div>\n\n  "
+            template: "\n  <div style=\"text-align: center;\">\n  <bar-graph\n    bind-data=\"graphData\"\n    width=\"1000\"\n    height=\"400\"\n  >\n  <svg></svg>\n  </bar-graph>\n  </div>\n\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], App);
