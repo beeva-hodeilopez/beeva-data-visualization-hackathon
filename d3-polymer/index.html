@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/polymer/0.5.0/polymer.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <link rel="import" href="pie-chart.html">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        html {
+            background: url(assets/background.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        body{
+            background-color:transparent;
+        }
+        .template{
+            padding: 100px 162px;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+        .navbar-inverse {
+            background-color: rgba(204, 204, 204, 0.77);
+            border-color: transparent;
+        }
+        .logo{
+            width:150px;
+        }
+        .footer {
+            position: relative;
+            height: 150px;
+            clear:both;
+            padding-top:20px;
+        }
+    </style>
+</head>
+<body>
+<!--NAV BAR-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <a href="#"><img class="logo" src="assets/logo.png" alt="BEEVA"/></a>
+            </div>
+            <div class="col-lg-8" style="text-align: center;">
+                <h2 style="margin: 8px;">Vanilla JS Nvd3 example</h2>
+            </div>
+            <div class="col-lg-2">
+                <a style="color: black;" href="../index.html">
+                    <img style="width: 46px;float: left;" src="assets/home.png"/>
+                    <h4 style="margin-top: 17px;margin-left: 55px;">Inicio</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!--PAGE CONTENT-->
+    <div class="template">
+        <pie-chart url="data.csv"></pie-chart>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="container">
+            <div style="float:right;">
+                <img src="assets/d3.png" style="width:176px;" alt="D3.JS"/>
+                <img src="assets/polymer.png" style="width:80px;" alt="POLYMER"/>
+            </div>
+        </div>
+    </footer>
+</body>
+
