@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <meta charset=utf-8 />
+    <title>Angular JS Demo</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.1/angular.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="maps.js"></script>
+    <script src="geo.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+        html {
+            background: url(assets/background.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        body{
+            background-color:transparent;
+        }
+        .template{
+            padding: 100px 15px;
+            text-align: center;
+        }
+        .navbar-inverse {
+            background-color: rgba(204, 204, 204, 0.77);
+            border-color: transparent;
+        }
+        .logo{
+            width:150px;
+        }
+        .container-fluid {
+            position: relative;
+            height: 150px;
+            clear:both;
+            padding-top:58px;
+        }
+        .angular-google-map-container { height: 400px; }
+    </style>
+</head>
+<body ng-app="myApp">
+<!--NAV BAR-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <a href="#"><img class="logo" src="assets/logo.png" alt="BEEVA"/></a>
+            </div>
+            <div class="col-lg-8" style="text-align: center;">
+                <h2 style="margin: 8px;">AngularJS Google Maps Example</h2>
+            </div>
+            <div class="col-lg-2">
+                <a style="color: black;" href="../index.html">
+                    <img style="width: 46px;float: left;" src="assets/home.png"/>
+                    <h4 style="margin-top: 17px;margin-left: 55px;">Inicio</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid" ng-controller="myCntr">
+    <div class="row">
+        <div class="col-xs-6" ng-if="weather">
+            <span style="color: white;" ng-if="info && info.city">{{info.city}}</span>
+            <img ng-src="http://openweathermap.org/img/w/{{weather.icon}}.png">
+            <span style="color: white;">{{weather.temp}}º</span>
+        </div>
+        <div class="col-xs-6">
+            <button class="btn btn-success pull-right" ng-click="getBaresGeo()" style="margin-top: 10px;">Geolocalizar</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <ui-gmap-google-map id="mapa" center='map.center' zoom='map.zoom'>
+                <ui-gmap-marker ng-repeat="m in map.markers" coords="m" click="onMarkerClicked(m)" idKey="m.id">
+                    <ui-gmap-window ng-cloak  coords="map.infoWindowWithCustomClass.coords">
+                        <div style="height: 70px;">
+                            <p><strong>{{m.name}}</strong></p>
+                            <p>{{m.dir}}</p>
+                        </div>
+                    </ui-gmap-window>
+                </ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+    </div>
+</div>
+
+<!--FOOTER-->
+<footer class="footer">
+    <div class="container">
+        <div style="float:right;">
+            <img src="assets/google.png" style="width:80px;" alt="GOOGLE"/>
+            <img src="assets/angular.png" style="width:80px;" alt="REACT"/>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
